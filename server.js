@@ -14,12 +14,15 @@ const quizSchema = new mongoose.Schema({
 
 const Quiz = mongoose.model('Quize',quizSchema);
 
-const me = new Quiz({
-    name:"Mariana Teodoro de Moura",
-    SID: 300338521,
-}
 
-)
+
+app.get("/",(req,res)=>{
+    const me = new Quiz({
+        name:"Mariana Teodoro de Moura",
+        SID: 300338521,
+    }
+    )
+})
 
 
 Quiz.insertMany([me])
