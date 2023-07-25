@@ -4,7 +4,7 @@ const mongoose = require('mongoose')
 const app = express();
 
 // mongoose.connect('mongodb://127.0.0.1:27017/Exam', {
-mongoose.connect('mongodb+srv://mari:.wMWBH83T9KUZMm@nodexpress-mariana.t8cgnzd.mongodb.net/exam?retryWrites=true&w=majority', {
+mongoose.connect('mongodb+srv:// tempuser:123@cluster0.f9d6o.gcp.mongodb.net/Exam', {
     useNewUrlParser: true,
   });
 
