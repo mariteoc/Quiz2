@@ -21,16 +21,18 @@ app.get("/",(req,res)=>{
         name:"Mariana Teodoro de Moura",
         SID: 300338521,
     }
-    )
-})
+    );
 
-
-Quiz.insertMany([me])
+    Quiz.insertMany([me])
 .then(function(){
     console.log('Data inserted')
 }).catch(function(error){
     console.log(error)
 });
+})
+
+
+
 
 app.listen(7000);
 console.log("The server is running on port 7000");
