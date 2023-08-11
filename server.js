@@ -15,20 +15,25 @@ const quizSchema = new mongoose.Schema({
 
 const Quiz = mongoose.model('Quize',quizSchema);
 
-const me = new Quiz({
-    name:"Mariana Teodoro de Moura",
-    SID: 300338521,
-}
-
-)
 
 
-Quiz.insertMany([me])
-.then(function(){
-    console.log('Data inserted')
-}).catch(function(error){
-    console.log(error)
-});
+app.get("/",(req,res)=>{
+    const me = new Quiz({
+        name:"Mariana Teodoro de Moura",
+        SID: 300338521,
+    }
+    
+    )
+    
+    
+    Quiz.insertOne(me)
+    .then(function(){
+        console.log('Data inserted')
+    }).catch(function(error){
+        console.log(error)
+    });
+})
+
 
 app.listen(7000);
 console.log("The server is running on port 7000");
