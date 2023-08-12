@@ -21,16 +21,16 @@ app.get("/",(req,res)=>{
     const me = new Quiz({
         name:"Mariana Teodoro de Moura",
         SID: 300338521,
-    }
-    
-    )
+    }   );
     
     
-    Quiz.insertOne(me)
+    Quiz.create(me)
     .then(function(){
-        console.log('Data inserted')
+        console.log('Data inserted');
+         res.sendFile(__dirname + "/index.html");
     }).catch(function(error){
-        console.log(error)
+        console.log(error);
+        res.status(500).send('Error inserting data');
     });
 })
 
